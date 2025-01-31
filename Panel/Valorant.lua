@@ -63,22 +63,18 @@ function faceCams()
 end
 
 function valorantMV()
-    wait_milliseconds(t)
-
-    set('MV1.Inputs.4', 'source', 'SCENES.Valorant Game.Game')
-    set('MV1.Windows.4', 'audio_source', 'SCENES.Valorant Game.Game')
-    set('MV1.Inputs.6', 'source', 'SCENES.Valorant Game.Media')
-    set('MV1.Inputs.10', 'source', 'SCENES.Valorant Game.LED Wall')
-    set('MV1.Inputs.11', 'source', 'SCENES.Valorant Game.Caster Desk')
-
-    set('IP-AUX1', 'source', 'SCENES.Valorant Game.LED Wall')
     set('IP-AUX2', 'source', 'SCENES.Valorant Game.Canvas')
     set('IP-AUX3', 'source', 'SCENES.Valorant Game.Canvas')
     set('IP-AUX4', 'source', 'SCENES.Valorant Game.Canvas')
     set('IP-AUX5', 'source', 'SCENES.Valorant Game.Canvas')
     set('IP-AUX6', 'source', 'SCENES.Valorant Game.Canvas')
-    set('IP-AUX7', 'source', 'SCENES.Valorant Game.Caster Desk')
+
+    set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', 'SCENES.Valorant Game.LED Wall')
+    set('SCENES.Normal.Caster Desk.Layers.Background', 'sourceA', 'SCENES.Valorant Game.Caster Desk')
+
     set('MV2.Inputs.11', 'source', 'SCENES.Valorant Game.Canvas')
+    wait_milliseconds(t)
+    call('MVPRESETS.Game 2', 'store', '5061')
 end
 
 -------------------------------------------------------------------------------------------
@@ -102,6 +98,9 @@ set('GFX1', 'scene', '1000078028')
 
 call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
+set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game 1')
+set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game 2')
+set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'WHITE')
 
 valorantMV()
 
@@ -112,3 +111,12 @@ end
 set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', '1000065348')
 
 --faceCams()
+
+set('AP1', 'playlist', '1000333579,1000333580,1000333581,1000333582,1000333583,1000333584,1000333585,1000333586,1000333587,1000333588,1000333589,1000333590,')
+set('AP1', 'playlist_idx', '5')
+call('AP1', 'load_clip', '1000333583')
+call('AP1', 'play')
+set('AP1', 'repeat_playlist', '1')
+
+set('AP2', 'clip', '0')
+set('AP2', 'playlist', '')

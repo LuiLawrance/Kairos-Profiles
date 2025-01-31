@@ -38,24 +38,18 @@ function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
 end
 
 function leagueMV()
-    wait_milliseconds(t)
-
-    set('MV1.Inputs.4', 'source', 'SCENES.League Game.Game')
-    set('MV1.Windows.4', 'audio_source', 'SCENES.League Game.Game')
-    set('MV1.Inputs.5', 'source', 'SCENES.League Game.Replay')
-    set('MV1.Windows.5', 'audio_source', 'SCENES.League Game.Replay')
-    set('MV1.Inputs.6', 'source', 'SCENES.League Game.Media')
-    set('MV1.Inputs.10', 'source', 'SCENES.League Game.LED Wall')
-    set('MV1.Inputs.11', 'source', 'SCENES.League Game.Caster Desk')
-
-    set('IP-AUX1', 'source', 'SCENES.League Game.LED Wall')
     set('IP-AUX2', 'source', 'SCENES.League Game.Canvas')
     set('IP-AUX3', 'source', 'SCENES.League Game.Canvas')
     set('IP-AUX4', 'source', 'SCENES.League Game.Canvas')
     set('IP-AUX5', 'source', 'SCENES.League Game.Canvas')
     set('IP-AUX6', 'source', 'SCENES.League Game.Canvas')
-    set('IP-AUX7', 'source', 'SCENES.League Game.Caster Desk')
+
+    set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', 'SCENES.League Game.LED Wall')
+    set('SCENES.Normal.Caster Desk.Layers.Background', 'sourceA', 'SCENES.League Game.Caster Desk')
+
     set('MV2.Inputs.11', 'source', 'SCENES.League Game.Canvas')
+    wait_milliseconds(t)
+    call('MVPRESETS.Game 2', 'store', '5061')
 end
 
 function loadChampions()
@@ -94,6 +88,9 @@ set('GFX1', 'scene', '1000077191')
 
 call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
+set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.League Game.Game')
+set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'WHITE')
+set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'SCENES.League Game.Replay')
 
 leagueMV()
 
@@ -114,10 +111,6 @@ set('RR4', 'clip', 'MEDIA/ramrec/League of Legends/Sign Extended.rr')
 set('RR5', 'clip', 'MEDIA/ramrec/League of Legends/Crawl USC.rr')
 set('RR6', 'clip', 'MEDIA/ramrec/League of Legends/Crawl Boise.rr')
 
-call('MVPRESETS.Game 1', 'store', '5060')
-wait_milliseconds(t * 5)
-call('MVPRESETS.Game 2', 'store', '5061')
-
 set('RR5', 'repeat', '1')
 set('RR6', 'repeat', '1')
 
@@ -134,3 +127,6 @@ set('AP2', 'playlist_idx', '0')
 call('AP2', 'load_clip', '1000151760')
 call('AP2', 'play')
 set('AP2', 'repeat_playlist', '1')
+
+set('RR4', 'clip', 'MEDIA/ramrec/Common/Sign Extended.rr')
+set('RR3', 'clip', 'MEDIA/ramrec/Common/Sign.rr')

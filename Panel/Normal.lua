@@ -76,25 +76,25 @@ clearRAM()
 --unloadChampions()
 set('GFX1', 'scene', '0')
 
-set('SCENES.Main.Layers.Background', 'sourceB', 'IP30') -- Sets the Main Preview
+set('SCENES.Main.Layers.Background', 'sourceB', 'IP29') -- Sets the Main Preview
 set('SCENES.Main.Layers.Background', 'sourceA', 'IP29') -- Sets the Main View
 
 set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', '7774')    -- Sets the LED Wall scene to Main
 set('SCENES.Normal.Caster Desk.Layers.Background', 'sourceA', '7774') -- Sets the Caster Desk scene to Main
 
+set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', 'SCENES.Main')
 set('IP-AUX2', 'source', 'SCENES.Normal.Canvas PVW')
 set('IP-AUX3', 'source', 'SCENES.Normal.Canvas PVW')
 set('IP-AUX4', 'source', 'SCENES.Normal.Canvas PVW')
 set('IP-AUX5', 'source', 'SCENES.Normal.Canvas PVW')
 set('IP-AUX6', 'source', 'SCENES.Normal.Canvas PVW')
-set('IP-AUX7', 'source', 'SCENES.Normal.Caster Desk')
+set('SCENES.Normal.Caster Desk.Layers.Background', 'sourceA', 'SCENES.Main')
 --set('SCENES.Normal.Canvas PVW.Layers.Right', 'sourceA', 'IP29')         --|
 --set('SCENES.Normal.Canvas PVW.Layers.Second Right', 'sourceA', 'IP29')  --|
 --set('SCENES.Normal.Canvas PVW.Layers.Middle', 'sourceA', 'IP29')        --| These set the Canvas Scenes
 --set('SCENES.Normal.Canvas PVW.Layers.Second Left', 'sourceA', 'IP29')   --|
 --set('SCENES.Normal.Canvas PVW.Layers.Left', 'sourceA', 'IP29')          --|
 --call('SCENES.Normal.Canvas PVW.Snapshots.Base Normal', 'recall')
-set('IP-AUX1', 'source', 'SCENES.Normal.LED Wall')
 
 set('SCENES.Normal.Quad.Layers.Top Left', 'sourceA', 'IP29')      --|
 set('SCENES.Normal.Quad.Layers.Top Right', 'sourceA', 'IP29')     --| Set Quad Scenes

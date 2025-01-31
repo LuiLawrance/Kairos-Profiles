@@ -63,22 +63,18 @@ function faceCams()
 end
 
 function overwatchMV()
-    wait_milliseconds(t)
-
-    set('MV1.Inputs.4', 'source', 'SCENES.Overwatch Game.Game')
-    set('MV1.Windows.4', 'audio_source', 'SCENES.Overwatch Game.Game')
-    set('MV1.Inputs.6', 'source', 'SCENES.Overwatch Game.Media')
-    set('MV1.Inputs.10', 'source', 'SCENES.Overwatch Game.LED Wall')
-    set('MV1.Inputs.11', 'source', 'SCENES.Overwatch Game.Caster Desk')
-
-    set('IP-AUX1', 'source', 'SCENES.Overwatch Game.LED Wall')
     set('IP-AUX2', 'source', 'SCENES.Overwatch Game.Canvas')
     set('IP-AUX3', 'source', 'SCENES.Overwatch Game.Canvas')
     set('IP-AUX4', 'source', 'SCENES.Overwatch Game.Canvas')
     set('IP-AUX5', 'source', 'SCENES.Overwatch Game.Canvas')
     set('IP-AUX6', 'source', 'SCENES.Overwatch Game.Canvas')
-    set('IP-AUX7', 'source', 'SCENES.Overwatch Game.Caster Desk')
+
+    set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', 'SCENES.Overwatch Game.LED Wall')
+    set('SCENES.Normal.Caster Desk.Layers.Background', 'sourceA', 'SCENES.Overwatch Game.Caster Desk')
+
     set('MV2.Inputs.11', 'source', 'SCENES.Overwatch Game.Canvas')
+    wait_milliseconds(t)
+    call('MVPRESETS.Game 2', 'store', '5061')
 end
 
 -------------------------------------------------------------------------------------------
@@ -102,6 +98,9 @@ set('GFX1', 'scene', '1000078027')
 
 call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
+set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.Overwatch Game.Game 1')
+set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'SCENES.Overwatch Game.Game 2')
+set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'WHITE')
 
 overwatchMV()
 
@@ -118,3 +117,6 @@ set('AP1', 'playlist_idx', '27')
 call('AP1', 'load_clip', '1000167627')
 call('AP1', 'play')
 set('AP1', 'repeat_playlist', '1')
+
+set('AP2', 'clip', '0')
+set('AP2', 'playlist', '')
