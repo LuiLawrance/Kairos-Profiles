@@ -9,7 +9,7 @@ local champions = load("return " .. championsString)()
 -------------------------------------------------------------------------------------------
 
 -- Functionality Variables
-local desiredSources = {30, 34, 35, 29, 27, 28}
+local desiredSources = {30, 31, 33, 29, 27, 28}
 local desiredVolume = {0, -10, -10, 0, -15, -18}
 local t = 50  -- Milliseconds to wait
 
@@ -116,9 +116,9 @@ set('RR6', 'repeat', '1')
 
 --call('MACROS.League Misc R1 Macros.Stinger', 'play')               -- Plays the transition so that screen doesn't turn black when the transition MOVs are first loaded into the RAM player
 
-set('AP1', 'playlist', '1000151763,1000151764,1000151765,1000151766,1000151767,')
+set('AP1', 'playlist', '1000349520,1000349521,1000151763,1000151764,1000349522,1000349523,1000349524,1000349525,1000151765,1000349526,1000151766,1000349527,1000151767,')
 set('AP1', 'playlist_idx', '0')
-call('AP1', 'load_clip', '1000151763')
+call('AP1', 'load_clip', '1000349520')
 call('AP1', 'play')
 set('AP1', 'repeat_playlist', '1')
 

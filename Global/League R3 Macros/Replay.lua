@@ -26,7 +26,7 @@ set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Replay')
 wait_milliseconds(10)
 
 call('MACROS.Main R2 Macros.1&#41; Casters', 'play')
-call('MACROS.Main R2 Macros.3&#41; LOL Rep', 'play')
+call('MACROS.Main R2 Macros.3&#41; Game 3', 'play')
 call('MACROS.League Misc R1 Macros.Replay', 'play')
 wait_milliseconds(3500)
 

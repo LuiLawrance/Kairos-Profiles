@@ -15,7 +15,7 @@ mode = get('GFXSCENES.League.Replay', 'value')
 muteAll()
 
 call('MACROS.Main R2 Macros.1&#41; Casters', 'play')
-call('MACROS.Main R2 Macros.2&#41; LOL Game', 'play')
+call('MACROS.Main R2 Macros.2&#41; Game 1', 'play')
 
 if mode == 0 then 
     set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Game')

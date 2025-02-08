@@ -7,7 +7,7 @@ local sourceIndex = load("return " .. sourceIndexString)()
 -------------------------------------------------------------------------------------------
 
 -- Functionality Variables
-local desiredSources = {30, 31, 32, 33, 27, 28}
+local desiredSources = {30, 31, 32, 29, 27, 28}
 local desiredVolume = {0, 0, 0, 0, 0, 0}
 local t = 50  -- Milliseconds to wait
 local faceCam = get('GFXSCENES.Control.Face Cams', 'value')
@@ -87,6 +87,8 @@ wait_milliseconds(t)
 set('GFXSCENES.Control.Game', 'value', 3)                          -- Set's it to 3 indicating Valorant
 set('SCENES.Main.Layers.Misc R1', 'sourceOptions', '1000077974,')
 set('SCENES.Main.Layers.Misc R2', 'sourceOptions', '1000077975,')
+set('SCENES.Main.Layers.Row 1', 'sourceOptions', '1000348300,')
+set('SCENES.Main.Layers.Row 2', 'sourceOptions', '1000348301,')
 set('SCENES.Main.Layers.Row 3', 'sourceOptions', '1000077976,')
 set('SCENES.Main.Layers.Row 4', 'sourceOptions', '1000077977,')
 set('SCENES.Main.Layers.Background', 'sourceOptions', '1000077770,')
