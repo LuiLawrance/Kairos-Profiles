@@ -1,2 +1,24 @@
-set('SCENES.Common.Poster.Layers.Background', 'sourceB', 'FXINPUTS.Common.Poster Follow')
-call('SCENES.Common.Poster.Transitions.BgdMix', 'transition_auto')
+-- Functionality Variables
+
+scene = 'SCENES.Common.Poster'
+poster = 'FXINPUTS.Common.Poster Follow'
+
+-------------------------------------------------------------------------------------------
+-- Arrays
+
+
+
+-------------------------------------------------------------------------------------------
+-- Functions
+
+
+
+-------------------------------------------------------------------------------------------
+-- Main Script
+
+set(scene .. '.Layers.Background', 'sourceB', poster)
+call(scene .. '.Transitions.BgdMix', 'transition_auto')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui
