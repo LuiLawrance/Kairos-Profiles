@@ -24,6 +24,8 @@ wait_milliseconds(10)
 call('AP1', 'play')
 call('MACROS.Main R2 Macros.5&#41; AP1', 'play')
 
+set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.League Game.Draft')
+
 set('SCENES.League Game.Canvas.Layers.Right', 'sourceB', 'CP2')
 set('SCENES.League Game.Canvas.Layers.Second Right', 'sourceB', 'CP2')
 set('SCENES.League Game.Canvas.Layers.Middle', 'sourceB', 'SCENES.Common.Media')

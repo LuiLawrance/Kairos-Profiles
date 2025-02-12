@@ -33,3 +33,7 @@ wait_milliseconds(3500)
 call('RR4', 'play')
 wait_milliseconds(500)
 call('SCENES.League Game.Replay.Snapshots.Show', 'recall')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui

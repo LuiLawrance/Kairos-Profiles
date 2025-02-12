@@ -20,3 +20,7 @@ call('MACROS.Main R2 Macros.5&#41; AP1', 'play')
 
 call('GFXSCENES.League.Visitor', 'increase')
 call('MACROS.League Misc R1 Macros.Defeat', 'play')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui

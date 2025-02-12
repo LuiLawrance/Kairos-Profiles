@@ -32,3 +32,9 @@ else
 
     call('MACROS.League R4 Macros.Show Game', 'play')
 end
+
+set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.Player POVs.Casters')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui
