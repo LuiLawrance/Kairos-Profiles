@@ -1,5 +1,10 @@
+-- Functionality Variables
+
+local clip = 'MEDIA/clips/Common/Flag.mp4'
+
 -------------------------------------------------------------------------------------------
 -- Functions
+
 function muteAll()
     for i = 1, 6 do
         if get('GFXSCENES.Control.Audio Control ' .. i, 'value') == 1 then
@@ -11,7 +16,7 @@ end
 -------------------------------------------------------------------------------------------
 -- Main Script
 
-set('CP2', 'clip', 'MEDIA/clips/Common/Flag.mp4')
+set('CP2', 'clip', clip)
 call('CP2', 'play')
 
 muteAll()
@@ -36,3 +41,7 @@ call('SCENES.League Game.LED Wall.Snapshots.Hide Score', 'recall')
 
 wait_seconds(3)
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Common.Media')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui

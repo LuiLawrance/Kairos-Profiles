@@ -1,15 +1,17 @@
--- Arrays
-local playerNames = {'Fenrir', 'GJKINGS', 'Blade', 'skyo', 'Lucaserlw', 'Dashzero', 'Obtainable', 'BIG MAN', 'serpentshadow', 'kinuryu'}
-
--------------------------------------------------------------------------------------------
 -- Functionality Variables
 
-local patch = '14.22'
+local patch = '2025.S1.3'
 
 local page = 0
 local t = 3000
 local blueBan = 'MEDIA/ramrec/League of Legends/Blue Ban.rr'
 local modeMV = get('GFXSCENES.Control.PlayerMV', 'value')
+
+-------------------------------------------------------------------------------------------
+-- Arrays
+
+local playerNames = {'Fenrir', 'CaPriccioso', 'Blade', 'skyo', 'Lucaserlw', 'Jasoninthe', 'Infinitude', 'Yi Lu Xiang', 'slunt', 'Jayweii'}
+
 
 -------------------------------------------------------------------------------------------
 -- Functions
@@ -172,3 +174,7 @@ if modeMV == 0 then
     call('MVPRESETS.Player 1', 'recall', '5060')
     call('MVPRESETS.Player 2', 'recall', '5061')
 end
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui
