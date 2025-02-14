@@ -1,20 +1,21 @@
 -- Arrays
+
 local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
 local sourceNames = load("return " .. sourceNamesString)()
 local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
 local sourceIndex = load("return " .. sourceIndexString)()
 
 -------------------------------------------------------------------------------------------
-
 -- Functionality Variables
+
 local desiredSources = {30, 31, 32, 29, 27, 28}
-local desiredVolume = {0, 0, 0, 0, 0, 0}
+--local desiredVolume = {0, 0, 0, 0, 0, 0}
 local t = 50  -- Milliseconds to wait
 local faceCam = get('GFXSCENES.Control.Face Cams', 'value')
 
 -------------------------------------------------------------------------------------------
-
 -- Functions
+
 function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
     if get('GFXSCENES.Control.Audio Toggle Control', 'value') ~= 0 then 
         call('MACROS.Main R1 Macros.Volume', 'play')
@@ -29,9 +30,9 @@ function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
         set('GFXSCENES.Control.Audio Source ' .. i, 'value', desiredSources[i])
 
         set('AUDIOMIXER.Channel ' .. i, 'source', sourceIndex[desiredSources[i]])
-        set('AUDIOMIXER.Channel ' .. i, 'volume', desiredVolume[i] / 100)
+        --set('AUDIOMIXER.Channel ' .. i, 'volume', desiredVolume[i] / 100)
         set('MACROS.Main R2 Macros.' .. i .. ') ' .. sourceNames[sourceCurrent], 'name', i .. ') ' .. sourceNames[desiredSources[i]])
-        set('GFXSCENES.Overwatch.Channel ' .. i, 'value', desiredVolume[i])
+        --set('GFXSCENES.Overwatch.Channel ' .. i, 'value', desiredVolume[i])
         wait_milliseconds(t)
     end
 end

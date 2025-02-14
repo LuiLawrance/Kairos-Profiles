@@ -3,6 +3,10 @@
 local macro = "Source" -- Set to "Volume" or "Source"
 local t = 10  -- Milliseconds to wait
 
+local game = get('GFXSCENES.Control.Game', 'value') -- Get current game selection
+local sceneNames = {"GFXSCENES.Control", "GFXSCENES.League", "GFXSCENES.Overwatch", "GFXSCENES.Valorant"}
+local scene = sceneNames[game + 1] -- Select the correct GFXScene based on the game value
+
 -------------------------------------------------------------------------------------------
 -- Arrays
 
@@ -69,8 +73,8 @@ function changeRGB()
 end
 
 function getVolume(channel)
-    local volume = get('AUDIOMIXER.Channel ' .. channel, 'volume')
-    return math.floor(volume * 100 + 0.5)
+    local volume = get(scene .. '.Channel ' .. channel, 'value')
+    return math.floor(volume * 1 + 0.5)
 end
 
 function renameButton()

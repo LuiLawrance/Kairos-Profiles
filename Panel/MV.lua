@@ -1,4 +1,19 @@
+-- Functionality Variables
+
 control = get('GFXSCENES.Control.MV', 'value')
+
+-------------------------------------------------------------------------------------------
+-- Arrays
+
+
+
+-------------------------------------------------------------------------------------------
+-- Functions
+
+
+
+-------------------------------------------------------------------------------------------
+-- Main Script
 
 if control == 0 then
   set('GFXSCENES.Control.MV', 'value', 1)
@@ -10,3 +25,7 @@ elseif control == 2 then
   set('GFXSCENES.Control.MV', 'value', 0)
   set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', '7774')
 end
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui

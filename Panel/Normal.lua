@@ -1,4 +1,5 @@
 -- Arrays
+
 local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
 local sourceNames = load("return " .. sourceNamesString)()
 local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
@@ -7,15 +8,15 @@ local championsString = get('GFXSCENES.League.Champions', 'text')
 local champions = load("return " .. championsString)()
 
 -------------------------------------------------------------------------------------------
-
 -- Functionality Variables
+
 local desiredSources = {1, 2, 3, 4, 5, 6}
-local desiredVolume = {0, 0, 0, 0, 0, 0}
+--local desiredVolume = {0, 0, 0, 0, 0, 0}
 local t = 10  -- Milliseconds to wait
 
 -------------------------------------------------------------------------------------------
-
 -- Functions
+
 function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
     if get('GFXSCENES.Control.Audio Toggle Control', 'value') ~= 0 then 
         call('MACROS.Main R1 Macros.Volume', 'play')
@@ -30,7 +31,7 @@ function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
         set('GFXSCENES.Control.Audio Source ' .. i, 'value', desiredSources[i])
 
         set('AUDIOMIXER.Channel ' .. i, 'source', sourceIndex[desiredSources[i]])
-        set('AUDIOMIXER.Channel ' .. i, 'volume', desiredVolume[i] / 100)
+        --set('AUDIOMIXER.Channel ' .. i, 'volume', desiredVolume[i] / 100)
         set('MACROS.Main R2 Macros.' .. i .. ') ' .. sourceNames[sourceCurrent], 'name', i .. ') ' .. sourceNames[desiredSources[i]])
         wait_milliseconds(t)
     end
@@ -54,8 +55,8 @@ function unloadChampions()
 end
 
 -------------------------------------------------------------------------------------------
-
 -- Main Script
+
 call('GFXSCENES.Control.Game', 'reset')                             -- Set's it to 0 indicating no game
 set('GFXSCENES.Control.MV', 'value', 0)                             -- Sets the MV Control Number to 0
 set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', '7774')  -- Sets the Wall Screen to the 'Main' Scene

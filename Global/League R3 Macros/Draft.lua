@@ -7,6 +7,9 @@ local t = 3000
 local blueBan = 'MEDIA/ramrec/League of Legends/Blue Ban.rr'
 local modeMV = get('GFXSCENES.Control.PlayerMV', 'value')
 
+local macroLocationAudio = 'MACROS.Main R2 Macros'
+local sceneGFX = 'GFXSCENES.Control'
+
 -------------------------------------------------------------------------------------------
 -- Arrays
 
@@ -18,9 +21,60 @@ local playerNames = {'Fenrir', 'CaPriccioso', 'Blade', 'skyo', 'Lucaserlw', 'Jas
 
 function muteAll()
     for i = 1, 6 do
-        if get('GFXSCENES.Control.Audio Control ' .. i, 'value') == 1 then
+        if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 1 then
             call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
         end
+
+        wait_milliseconds(10)
+    end
+end
+
+function muteAllExcept(source, preferredChannel)
+    local unmuted = 0
+
+    for i = 1, 6 do
+        if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 0 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+
+            unmuted = 1
+        else
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 1 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+        end
+
+        wait_milliseconds(10)
+    end
+
+    if unmuted == 0 then
+        local currentSource = get(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value')
+        set(macroLocationAudio .. '.' .. preferredChannel .. ') ' .. sourceNames[currentSource], 'name', preferredChannel .. ') ' .. sourceNames[source])
+        set('AUDIOMIXER.Channel ' .. preferredChannel, 'source', sourceIndex[source])
+        set(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value', source)
+        call('MACROS.Main R1 Macros.Channel ' .. preferredChannel, 'play')
+    end
+end
+
+function unmute(source, preferredChannel)
+    local unmuted = 0
+
+    for i = 1, 6 do
+        if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
+            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            unmuted = 1
+        end
+
+        wait_milliseconds(10)
+    end
+
+    if unmuted == 0 then
+        local currentSource = get(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value')
+        set(macroLocationAudio .. '.' .. preferredChannel .. ') ' .. sourceNames[currentSource], 'name', preferredChannel .. ') ' .. sourceNames[source])
+        set('AUDIOMIXER.Channel ' .. preferredChannel, 'source', sourceIndex[source])
+        set(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value', source)
+        call('MACROS.Main R1 Macros.Channel ' .. preferredChannel, 'play')
     end
 end
 
@@ -42,6 +96,8 @@ end
 
 -- Sets ticker information for blue and red teams
 local function setTicker(usc, visitor)
+    --print(usc)
+    --print(visitor)
     if usc >= 1 then set('SCENES.League Game.Draft.Layers.Ban and Menu.B1', 'sourceA', 'FXINPUTS.League Config.Ticker Blue') set('SCENES.League Game.LED Wall.Layers.Score.B1', 'sourceA', 'FXINPUTS.League Config.Ticker Blue') set('SCENES.League Game.Game.Layers.Score.B1', 'sourceA', 'FXINPUTS.League Config.Ticker Blue') end
     if usc == 2 then set('SCENES.League Game.Draft.Layers.Ban and Menu.B2', 'sourceA', 'FXINPUTS.League Config.Ticker Blue') set('SCENES.League Game.LED Wall.Layers.Score.B2', 'sourceA', 'FXINPUTS.League Config.Ticker Blue') set('SCENES.League Game.Game.Layers.Score.B2', 'sourceA', 'FXINPUTS.League Config.Ticker Blue') end
     if visitor >= 1 then set('SCENES.League Game.Draft.Layers.Ban and Menu.R1', 'sourceA', 'FXINPUTS.League Config.Ticker Red') set('SCENES.League Game.LED Wall.Layers.Score.R1', 'sourceA', 'FXINPUTS.League Config.Ticker Red') set('SCENES.League Game.Game.Layers.Score.R1', 'sourceA', 'FXINPUTS.League Config.Ticker Red') end
@@ -144,10 +200,9 @@ call('AP2', 'play')
 call('RR5', 'play')
 call('RR6', 'play')
 
-muteAll()
-wait_milliseconds(10)
-call('MACROS.Main R2 Macros.1&#41; Casters', 'play')
-call('MACROS.Main R2 Macros.6&#41; AP2', 'play')
+muteAllExcept(30, 1)
+wait_milliseconds(500)
+unmute(28, 6)
 
 wait_milliseconds(t)
 

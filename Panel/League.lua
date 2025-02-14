@@ -1,4 +1,5 @@
 -- Arrays
+
 local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
 local sourceNames = load("return " .. sourceNamesString)()
 local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
@@ -7,15 +8,15 @@ local championsString = get('GFXSCENES.League.Champions', 'text')
 local champions = load("return " .. championsString)()
 
 -------------------------------------------------------------------------------------------
-
 -- Functionality Variables
+
 local desiredSources = {30, 31, 33, 29, 27, 28}
-local desiredVolume = {0, -10, -10, 0, -15, -18}
+--local desiredVolume = {0, -10, -10, 0, -15, -18}
 local t = 50  -- Milliseconds to wait
 
 -------------------------------------------------------------------------------------------
-
 -- Functions
+
 function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
     if get('GFXSCENES.Control.Audio Toggle Control', 'value') ~= 0 then 
         call('MACROS.Main R1 Macros.Volume', 'play')
@@ -30,9 +31,9 @@ function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
         set('GFXSCENES.Control.Audio Source ' .. i, 'value', desiredSources[i])
 
         set('AUDIOMIXER.Channel ' .. i, 'source', sourceIndex[desiredSources[i]])
-        set('AUDIOMIXER.Channel ' .. i, 'volume', desiredVolume[i] / 100)
+        --set('AUDIOMIXER.Channel ' .. i, 'volume', desiredVolume[i] / 100)
         set('MACROS.Main R2 Macros.' .. i .. ') ' .. sourceNames[sourceCurrent], 'name', i .. ') ' .. sourceNames[desiredSources[i]])
-        set('GFXSCENES.League.Channel ' .. i, 'value', desiredVolume[i])
+        --set('GFXSCENES.League.Channel ' .. i, 'value', desiredVolume[i])
         wait_milliseconds(t)
     end
 end
