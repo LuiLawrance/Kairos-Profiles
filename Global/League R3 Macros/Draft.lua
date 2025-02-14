@@ -201,7 +201,7 @@ call('RR5', 'play')
 call('RR6', 'play')
 
 muteAllExcept(30, 1)
-wait_milliseconds(500)
+wait_milliseconds(1000)
 unmute(28, 6)
 
 wait_milliseconds(t)

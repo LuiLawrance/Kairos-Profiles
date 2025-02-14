@@ -86,6 +86,7 @@ muteAllExcept(27, 5)
 wait_milliseconds(10)
 call('AP1', 'play')
 
+set('SCENES.Main.Layers.Background', 'sourceA', 'SCENES.Common.Media')
 set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.League Game.Draft')
 
 set('SCENES.League Game.Canvas.Layers.Right', 'sourceB', 'CP2')
@@ -95,7 +96,6 @@ set('SCENES.League Game.Canvas.Layers.Second Left', 'sourceB', 'CP2')
 set('SCENES.League Game.Canvas.Layers.Left', 'sourceB', 'CP2')
 call('SCENES.League Game.Canvas.Transitions.BgdMix', 'transition_auto')
 
-set('SCENES.Main.Layers.Background', 'sourceA', 'SCENES.Common.Media')
 call('SCENES.Common.Media.Macros.Starting', 'play')
 call('SCENES.Common.Media.Macros.Flag', 'play')
 

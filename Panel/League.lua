@@ -1,3 +1,10 @@
+-- Functionality Variables
+
+local desiredSources = {30, 31, 33, 29, 27, 28}
+--local desiredVolume = {0, -10, -10, 0, -15, -18}
+local t = 50  -- Milliseconds to wait
+
+-------------------------------------------------------------------------------------------
 -- Arrays
 
 local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
@@ -6,13 +13,6 @@ local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
 local sourceIndex = load("return " .. sourceIndexString)()
 local championsString = get('GFXSCENES.League.Champions', 'text')
 local champions = load("return " .. championsString)()
-
--------------------------------------------------------------------------------------------
--- Functionality Variables
-
-local desiredSources = {30, 31, 33, 29, 27, 28}
---local desiredVolume = {0, -10, -10, 0, -15, -18}
-local t = 50  -- Milliseconds to wait
 
 -------------------------------------------------------------------------------------------
 -- Functions
@@ -90,7 +90,7 @@ set('GFX1', 'scene', '1000077191')
 call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
 set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.League Game.Game')
-set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'WHITE')
+set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'BLACK')
 set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'SCENES.League Game.Replay')
 
 leagueMV()
@@ -131,3 +131,7 @@ set('AP2', 'repeat_playlist', '1')
 
 set('RR4', 'clip', 'MEDIA/ramrec/Common/Sign Extended.rr')
 set('RR3', 'clip', 'MEDIA/ramrec/Common/Sign.rr')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui

@@ -84,7 +84,7 @@ set('SCENES.League Game.Canvas.Layers.Left', 'sourceB', 'CP2')
 call('SCENES.League Game.Canvas.Transitions.BgdMix', 'transition_auto')
 call('SCENES.Common.Media.Macros.Flag', 'play')
 
-set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Media')
+set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Common.Media')
 call('SCENES.Common.Media.Macros.Ending', 'play')
 call('MACROS.League Misc R1 Macros.Stinger', 'play')
 
@@ -93,7 +93,7 @@ call('SCENES.League Game.Canvas.Snapshots.Hide All', 'recall')
 call('SCENES.League Game.LED Wall.Snapshots.Hide Score', 'recall')
 
 wait_seconds(3)
-set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Media')
+set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Common.Media')
 
 -------------------------------------------------------------------------------------------
 

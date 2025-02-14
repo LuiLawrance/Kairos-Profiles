@@ -1,3 +1,10 @@
+-- Functionality Variables
+
+local desiredSources = {1, 2, 3, 4, 5, 6}
+--local desiredVolume = {0, 0, 0, 0, 0, 0}
+local t = 10  -- Milliseconds to wait
+
+-------------------------------------------------------------------------------------------
 -- Arrays
 
 local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
@@ -6,13 +13,6 @@ local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
 local sourceIndex = load("return " .. sourceIndexString)()
 local championsString = get('GFXSCENES.League.Champions', 'text')
 local champions = load("return " .. championsString)()
-
--------------------------------------------------------------------------------------------
--- Functionality Variables
-
-local desiredSources = {1, 2, 3, 4, 5, 6}
---local desiredVolume = {0, 0, 0, 0, 0, 0}
-local t = 10  -- Milliseconds to wait
 
 -------------------------------------------------------------------------------------------
 -- Functions
@@ -115,3 +115,7 @@ set('AP1', 'clip', '0')
 set('AP2', 'clip', '0')
 set('AP1', 'playlist', '')
 set('AP2', 'playlist', '')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui

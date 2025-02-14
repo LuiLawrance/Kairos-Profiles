@@ -1,17 +1,17 @@
--- Arrays
-
-local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
-local sourceNames = load("return " .. sourceNamesString)()
-local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
-local sourceIndex = load("return " .. sourceIndexString)()
-
--------------------------------------------------------------------------------------------
 -- Functionality Variables
 
 local desiredSources = {30, 31, 32, 29, 27, 28}
 --local desiredVolume = {0, 0, 0, 0, 0, 0}
 local t = 50  -- Milliseconds to wait
 local faceCam = get('GFXSCENES.Control.Face Cams', 'value')
+
+-------------------------------------------------------------------------------------------
+-- Arrays
+
+local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
+local sourceNames = load("return " .. sourceNamesString)()
+local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
+local sourceIndex = load("return " .. sourceIndexString)()
 
 -------------------------------------------------------------------------------------------
 -- Functions
@@ -103,7 +103,7 @@ call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
 set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game 1')
 set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game 2')
-set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'WHITE')
+set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'BLACK')
 
 valorantMV()
 
@@ -111,7 +111,7 @@ if get('GFXSCENES.Control.PlayerMV', 'value') >= 1 then -- Deactivate the any MV
     call('MACROS.Valorant R4 Macros.MV', 'play')
 end
 
-set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', '1000065348')
+set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.Valorant Game.Draft')
 
 --faceCams()
 
@@ -123,3 +123,7 @@ set('AP1', 'repeat_playlist', '1')
 
 set('AP2', 'clip', '0')
 set('AP2', 'playlist', '')
+
+-------------------------------------------------------------------------------------------
+
+-- This was coded by Lawrance Zhenyu Lui
