@@ -74,9 +74,6 @@ set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Player POVs.Casters')
 wait_milliseconds(500)
 unmute(27, 1)
 
-call('MACROS.Main R2 Macros.1&#41; Casters', 'play')
-call('MACROS.Main R2 Macros.5&#41; AP1', 'play')
-
 call('GFXSCENES.League.Visitor', 'increase')
 call('MACROS.League Misc R1 Macros.Defeat', 'play')
 
