@@ -5,7 +5,7 @@ local amntDroneClips = 10
 
 local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
-local macroStinger = 'MACROS.League Misc R1 Macros'
+local macroStinger = 'MACROS.Valorant Misc R1 Macros'
 
 -------------------------------------------------------------------------------------------
 -- Functions

@@ -76,8 +76,10 @@ muteAllExcept(27, 5)
 wait_milliseconds(10)
 call('AP1', 'play')
 
+call('SCENES.Common.Media.Macros.Flag', 'play')
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Common.Media')
 call('SCENES.Common.Media.Macros.Ending', 'play')
+
 call('MACROS.Valorant Misc R1 Macros.Stinger', 'play')
 
 wait_seconds(3)
