@@ -117,9 +117,9 @@ set('RR6', 'repeat', '1')
 
 --call('MACROS.League Misc R1 Macros.Stinger', 'play')               -- Plays the transition so that screen doesn't turn black when the transition MOVs are first loaded into the RAM player
 
-set('AP1', 'playlist', '1000349520,1000349521,1000151763,1000151764,1000349522,1000349523,1000349524,1000349525,1000151765,1000349526,1000151766,1000349527,1000151767,')
+set('AP1', 'playlist', '1000362560,1000362561,1000362562,1000362563,1000362564,1000362565,1000362566,1000362567,1000362568,1000362569,1000362570,1000362571,')
 set('AP1', 'playlist_idx', '0')
-call('AP1', 'load_clip', '1000349520')
+call('AP1', 'load_clip', '1000362560')
 call('AP1', 'play')
 set('AP1', 'repeat_playlist', '1')
 

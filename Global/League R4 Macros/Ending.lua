@@ -71,6 +71,7 @@ end
 
 set('CP2', 'clip', clip)
 call('CP2', 'play')
+call('SCENES.Common.Media.Snapshots.Set BGD', 'recall')
 
 muteAllExcept(27, 5)
 wait_milliseconds(10)

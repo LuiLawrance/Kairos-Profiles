@@ -1,6 +1,6 @@
 -- Functionality Variables
 
-
+local snapshotHideCDN = 'THIS_SCENE.Snapshots.Hide CDN'
 
 -------------------------------------------------------------------------------------------
 -- Arrays
@@ -10,21 +10,16 @@
 -------------------------------------------------------------------------------------------
 -- Functions
 
-
+function snapshot(snapshot)
+    call(snapshot, 'recall')
+end
 
 -------------------------------------------------------------------------------------------
 -- Main Script
 
-call('GFXSCENES.Control.T1 1', 'reset')
-call('GFXSCENES.Control.T2 1', 'reset')
-call('GFXSCENES.Control.T1 2', 'reset')
-call('GFXSCENES.Control.T2 2', 'reset')
-call('GFXSCENES.Control.T1 3', 'reset')
-call('GFXSCENES.Control.T2 3', 'reset')
-
-call('THIS_SCENE.Macros.BO3 1', 'play')
-call('THIS_SCENE.Macros.BO3 2', 'play')
-call('THIS_SCENE.Macros.BO3 3', 'play')
+snapshot(snapshotHideCDN)
+wait_milliseconds(1000)
+call('GFXSCENES.Control.Countdown', 'reset')
 
 -------------------------------------------------------------------------------------------
 
