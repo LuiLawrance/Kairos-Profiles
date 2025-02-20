@@ -1,6 +1,6 @@
 -- Functionality Variables
 
-local clip = 'MEDIA/clips/Common/League of Legends/Project.mp4'
+local clip = 'MEDIA/clips/Common/League of Legends/Burning Bright.mp4'
 local clipPlayer = 'CP1'
 
 local macroStartCDN = 'SCENES.Common.Media.Macros.Start CDN'
@@ -107,14 +107,17 @@ set(clipPlayer, 'playlist', '')
 set(clipPlayer, 'clip', clip)
 set(sceneMediaLayer .. '.Layers.BGD', 'sourceB', clipPlayer)
 
-unmute(29, 4)
-call(clipPlayer, 'play')
-
-wait_milliseconds(5000)
+wait_milliseconds(500)
 
 snapshot(snapshotMediaHide)
 
-wait_milliseconds(10500)
+wait_milliseconds(1000)
+
+call(clipPlayer, 'play')
+
+wait_milliseconds(1000)
+unmute(29, 4)
+wait_milliseconds(3000)
 
 snapshot(snapshotMediaMenuShow)
 wait_milliseconds(1000)
