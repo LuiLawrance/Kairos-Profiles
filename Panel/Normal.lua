@@ -111,6 +111,8 @@ call('IN_STREAM3.PtzTrigger', 'recall_preset', '24') --|
 
 set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', '1000065348')
 
+set('CP1', 'clip', '0')
+set('CP2', 'clip', '0')
 set('AP1', 'clip', '0')
 set('AP2', 'clip', '0')
 set('AP1', 'playlist', '')

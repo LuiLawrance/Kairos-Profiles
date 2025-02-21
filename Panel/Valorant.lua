@@ -101,8 +101,8 @@ set('GFX1', 'scene', '1000078028')
 
 call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
-set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game 1')
-set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game 2')
+set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game')
+set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'BLACK')
 set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'BLACK')
 
 valorantMV()
@@ -114,6 +114,9 @@ end
 set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.Valorant Game.Draft')
 
 --faceCams()
+
+set('CP2', 'clip', 'MEDIA/clips/Common/Flag.mp4')
+call('CP2', 'play')
 
 set('AP1', 'playlist', '1000333579,1000333580,1000333581,1000333582,1000333583,1000333584,1000333585,1000333586,1000333587,1000333588,1000333589,1000333590,')
 set('AP1', 'playlist_idx', '5')

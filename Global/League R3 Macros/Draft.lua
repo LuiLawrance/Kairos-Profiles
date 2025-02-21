@@ -1,7 +1,5 @@
 -- Functionality Variables
 
-local patch = '2025.S1.3'
-
 local page = 0
 local t = 3000
 local blueBan = 'MEDIA/ramrec/League of Legends/Blue Ban.rr'
@@ -13,7 +11,7 @@ local sceneGFX = 'GFXSCENES.Control'
 -------------------------------------------------------------------------------------------
 -- Arrays
 
-local playerNames = {'Fenrir', 'CaPriccioso', 'Blade', 'skyo', 'Lucaserlw', 'Jasoninthe', 'Infinitude', 'Yi Lu Xiang', 'slunt', 'Jayweii'}
+local playerNames = {'asyay', 'THE HONORED', 'Caerulight', 'MirrorTime', 'kiss in rain', 'Lime', 'Papaya', 'Zedophillia', 'mithril', 'Schwod4'}
 
 
 -------------------------------------------------------------------------------------------
@@ -219,7 +217,6 @@ call('SCENES.League Game.LED Wall.Snapshots.Blue Pick', 'recall')
 
 set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.League Game.LED Wall')
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Draft') -- Pulls up the champion select
-set('GFXSCENES.League.Patch', 'text', patch)
 recallMatchSnapshot(match) -- Set snapshot based on match type
 configureTeamSides(blue, usc, visitor) -- Configure blue and red sides based on team values
 

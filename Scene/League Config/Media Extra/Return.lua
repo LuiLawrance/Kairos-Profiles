@@ -1,9 +1,8 @@
 -- Functionality Variables
 
-local game = get('GFXSCENES.Control.Game', 'value')
-
+local sceneMain = 'SCENES.Main'
 local sceneMedia = 'SCENES.Common.Media'
-local sceneExtraLeague = 'SCENES.League Config.Media Extra'
+
 
 -------------------------------------------------------------------------------------------
 -- Arrays
@@ -14,7 +13,7 @@ local sceneExtraLeague = 'SCENES.League Config.Media Extra'
 -- Functions
 
 function swap()
-    set('SCENES.Main.Layers.Background', 'sourceB', sceneMedia)
+    set(sceneMain .. '.Layers.Background', 'sourceB', sceneMedia)
 end
 
 -------------------------------------------------------------------------------------------

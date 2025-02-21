@@ -90,8 +90,8 @@ set('GFX1', 'scene', '1000077191')
 call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
 set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.League Game.Game')
-set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'BLACK')
-set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'SCENES.League Game.Replay')
+set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'SCENES.League Game.Replay')
+set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'BLACK')
 
 leagueMV()
 
@@ -107,15 +107,13 @@ call('GFXSCENES.League.Visitor', 'reset') --|
 set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', '1000057174')
 set('GFXSCENES.League.Current Phase', 'text', 'Pick Phase 2')
 
-set('RR3', 'clip', 'MEDIA/ramrec/League of Legends/Sign.rr')
-set('RR4', 'clip', 'MEDIA/ramrec/League of Legends/Sign Extended.rr')
-set('RR5', 'clip', 'MEDIA/ramrec/League of Legends/Crawl USC.rr')
-set('RR6', 'clip', 'MEDIA/ramrec/League of Legends/Crawl Boise.rr')
-
 set('RR5', 'repeat', '1')
 set('RR6', 'repeat', '1')
 
 --call('MACROS.League Misc R1 Macros.Stinger', 'play')               -- Plays the transition so that screen doesn't turn black when the transition MOVs are first loaded into the RAM player
+
+set('CP2', 'clip', 'MEDIA/clips/Common/Flag.mp4')
+call('CP2', 'play')
 
 set('AP1', 'playlist', '1000362560,1000362561,1000362562,1000362563,1000362564,1000362565,1000362566,1000362567,1000362568,1000362569,1000362570,1000362571,')
 set('AP1', 'playlist_idx', '0')
