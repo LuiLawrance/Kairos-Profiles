@@ -1,7 +1,7 @@
 -- Functionality Variables
 
 --local transition = 'MEDIA/ramrec/Common/Transitions/Stinger Flash Vertical.rr'
-local transition = 'MEDIA/ramrec/Common/Stinger.rr'
+local transition = 'MEDIA/ramrec/Common/Transitions/Stinger.rr'
 
 -------------------------------------------------------------------------------------------
 -- Arrays

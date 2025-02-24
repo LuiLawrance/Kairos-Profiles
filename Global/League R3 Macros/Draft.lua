@@ -11,7 +11,7 @@ local sceneGFX = 'GFXSCENES.Control'
 -------------------------------------------------------------------------------------------
 -- Arrays
 
-local playerNames = {'asyay', 'THE HONORED', 'Caerulight', 'MirrorTime', 'kiss in rain', 'Lime', 'Papaya', 'Zedophillia', 'mithril', 'Schwod4'}
+local playerNames = {'asyay', 'The Honored', 'Caerulight', 'MirrorTime', 'kiss in rain', 'OnionMP4', 'venom', 'EliteYasuos', 'Leonatus', 'imissgoredrinker'}
 
 
 -------------------------------------------------------------------------------------------
@@ -205,7 +205,6 @@ unmute(28, 6)
 wait_milliseconds(t)
 
 resetAll() -- Reset all selections
-initializeDraft() -- Start initial draft setup
 
 -- Retrieve additional variables for setting up teams
 local blue = get('GFXSCENES.League.Blue Side', 'value')
@@ -226,6 +225,10 @@ if modeMV == 0 then
     call('MVPRESETS.Player 1', 'recall', '5060')
     call('MVPRESETS.Player 2', 'recall', '5061')
 end
+
+initializeDraft() -- Start initial draft setup
+wait_milliseconds(5000)
+call('MACROS.League Misc R1 Macros.Casters', 'play')
 
 -------------------------------------------------------------------------------------------
 

@@ -4,6 +4,7 @@ local clip = 'MEDIA/clips/Common/Flag League of Legends.mp4'
 
 local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
+local intermission = 'GFXSCENES.League.Intermission'
 
 -------------------------------------------------------------------------------------------
 -- Functions
@@ -69,6 +70,7 @@ end
 -------------------------------------------------------------------------------------------
 -- Main Script
 
+set(intermission, 'value', 1)
 set('CP2', 'clip', clip)
 call('CP2', 'play')
 call('SCENES.Common.Media.Snapshots.Set BGD', 'recall')

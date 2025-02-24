@@ -1,7 +1,9 @@
 -- Functionality Variables
 
 local clip = 'MEDIA/clips/Common/Flag.mp4'
+local clipLeague = 'MEDIA/clips/Common/Flag League of Legends.mp4'
 local clipPlayer = 'CP2'
+local intermission = 'GFXSCENES.League.Intermission'
 
 local macroStartCDN = 'SCENES.Common.Media.Macros.Start CDN'
 
@@ -84,6 +86,18 @@ function unmute(source, preferredChannel)
     end
 end
 
+function flag()
+    onIntermission = get(intermission, 'value')
+
+    if onIntermission == 1 then
+        set(clipPlayer, 'clip', clipLeague)
+        set(sceneMediaLayer .. '.Layers.BGD', 'sourceB', clipPlayer)
+    else
+        set(clipPlayer, 'clip', clip)
+        set(sceneMediaLayer .. '.Layers.BGD', 'sourceB', clipPlayer)
+    end
+end
+
 function macro(macro)
     call(macro, 'play')
 end
@@ -104,8 +118,7 @@ muteAll()
 set(clipPlayer, 'clip', '0')
 set(clipPlayer, 'playlist', '')
 
-set(clipPlayer, 'clip', clip)
-set(sceneMediaLayer .. '.Layers.BGD', 'sourceB', clipPlayer)
+flag()
 
 wait_milliseconds(500)
 call(clipPlayer, 'play')
