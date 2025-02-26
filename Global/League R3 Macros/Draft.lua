@@ -11,8 +11,8 @@ local sceneGFX = 'GFXSCENES.Control'
 -------------------------------------------------------------------------------------------
 -- Arrays
 
-local playerNames = {'asyay', 'The Honored', 'Caerulight', 'MirrorTime', 'kiss in rain', 'OnionMP4', 'venom', 'EliteYasuos', 'Leonatus', 'imissgoredrinker'}
-
+local playerNamesString = get('GFXSCENES.League.Players', 'text')
+local playerNames = load("return " .. playerNamesString)()
 
 -------------------------------------------------------------------------------------------
 -- Functions
@@ -140,8 +140,6 @@ end
 
 -- Handles initial draft setup
 local function initializeDraft()
-    call('SCENES.League Game.Draft.Snapshots.Ban Only Menu', 'recall')
-    wait_milliseconds(100)
     page = get('GFXSCENES.League.Draft Page', 'value')
     
     call('SCENES.League Game.Draft.Macros.Next Page', 'play')
@@ -204,6 +202,7 @@ unmute(28, 6)
 
 wait_milliseconds(t)
 
+initializeDraft() -- Start initial draft setup
 resetAll() -- Reset all selections
 
 -- Retrieve additional variables for setting up teams
@@ -226,7 +225,7 @@ if modeMV == 0 then
     call('MVPRESETS.Player 2', 'recall', '5061')
 end
 
-initializeDraft() -- Start initial draft setup
+call('SCENES.League Game.Draft.Snapshots.Ban Only Menu', 'recall')
 wait_milliseconds(5000)
 call('MACROS.League Misc R1 Macros.Casters', 'play')
 

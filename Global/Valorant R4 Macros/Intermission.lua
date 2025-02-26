@@ -6,6 +6,8 @@ local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
 local intermission = 'GFXSCENES.Valorant.Intermission'
 
+local snapshotMedia = 'SCENES.Valorant Game.LED Wall.Snapshots.Media'
+
 -------------------------------------------------------------------------------------------
 -- Functions
 function muteAll()
@@ -67,12 +69,25 @@ function unmute(source, preferredChannel)
     end
 end
 
+function callSnapshot(snapshot)
+    call(snapshot, 'recall')
+end
+
+function mediaLEDWall()
+    callSnapshot(snapshotMedia)
+    set('SCENES.Valorant Game.LED Wall.Layers.Map Image', 'sourceB', 'SCENES.Common.Media')
+    wait_milliseconds(100)
+    call('SCENES.Valorant Game.LED Wall.Transitions.BgdMix', 'transition_auto')
+end
+
 -------------------------------------------------------------------------------------------
 -- Main Script
 
 set(intermission, 'value', 1)
 set('CP2', 'clip', clip)
 call('CP2', 'play')
+
+mediaLEDWall()
 
 muteAllExcept(27, 5)
 wait_milliseconds(10)

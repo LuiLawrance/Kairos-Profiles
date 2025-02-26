@@ -101,7 +101,7 @@ function cameraMove()
         call('IN_STREAM2.PtzTrigger', 'recall_preset', '24')
 
         set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Player POVs.Casters')
-        call(transitionStinger .. '.Stinger', 'play')
+        call(macroStinger .. '.Stinger', 'play')
 
         --wait_milliseconds(3250)
         wait_milliseconds(1500)
