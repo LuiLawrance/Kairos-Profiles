@@ -13,7 +13,7 @@ local snapshotMediaHide = sceneMediaLayer .. '.Snapshots.Hide All'
 local snapshotMediaShowCDN = sceneMediaLayer .. '.Snapshots.Show CDN'
 
 local transitionBlack = 'SCENES.Common.Media.Transitions.Black'
-local transitionSnake = 'SCENES.Common.Media.Transitions.Snake'
+local transitionMedia = 'SCENES.Common.Media.Transitions.Media'
 
 local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
@@ -122,7 +122,7 @@ flag()
 
 wait_milliseconds(500)
 call(clipPlayer, 'play')
-transition(transitionSnake)
+transition(transitionMedia)
 
 wait_milliseconds(3000)
 
