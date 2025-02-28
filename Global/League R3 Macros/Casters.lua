@@ -178,6 +178,8 @@ end
 muteAllExcept(27, 5)
 wait_milliseconds(500)
 
+call('SCENES.Player POVs.Casters.Snapshots.Hide', 'recall')
+
 set('RR4', 'clip', 'MEDIA/ramrec/Common/Sign Extended.rr')
 
 call('RR4', 'begin')

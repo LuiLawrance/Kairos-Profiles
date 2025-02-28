@@ -1,7 +1,9 @@
 -- Functionality Variables
 
-local gfxTarget = 'GFXSCENES.League.Caster 2'
+local gfxTargetLeague = 'GFXSCENES.League.Caster 2'
+local gfxTargetValorant = 'GFXSCENES.Valorant.Caster 2'
 
+local gfxGame = 'GFXSCENES.Control.Game'
 local gfxKeyboard = 'GFXSCENES.Control.Keyboard'
 local gfxKeyboardSource = 'GFXSCENES.Control.Keyboard Source'
 
@@ -16,9 +18,9 @@ local sceneKeyboard = 'SCENES.Normal Config.Keyboard'
 -------------------------------------------------------------------------------------------
 -- Functions
 
-function activateKeyboard()
-    set(gfxKeyboardSource, 'text', gfxTarget)
-    set(gfxKeyboard, 'text', get(gfxTarget, 'text'))
+function activateKeyboard(target)
+    set(gfxKeyboardSource, 'text', target)
+    set(gfxKeyboard, 'text', get(target, 'text'))
 
     set(layerMainBackground, 'sourceB', sceneKeyboard)
 end
@@ -26,7 +28,11 @@ end
 -------------------------------------------------------------------------------------------
 -- Main Script
 
-activateKeyboard()
+if get(gfxGame, 'value') == 1 then
+    activateKeyboard(gfxTargetLeague)
+elseif get(gfxGame, 'value') == 3 then
+    activateKeyboard(gfxTargetValorant)
+end
 
 -------------------------------------------------------------------------------------------
 

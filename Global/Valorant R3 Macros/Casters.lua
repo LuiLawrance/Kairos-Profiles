@@ -101,7 +101,7 @@ function cameraMove()
         call('IN_STREAM2.PtzTrigger', 'recall_preset', '24')
 
         set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Player POVs.Casters')
-        call(transitionStinger .. '.Stinger', 'play')
+        call(macroStinger .. '.Stinger', 'play')
 
         --wait_milliseconds(3250)
         wait_milliseconds(1500)
@@ -177,6 +177,8 @@ end
 
 muteAllExcept(27, 5)
 wait_milliseconds(500)
+
+call('SCENES.Player POVs.Casters.Snapshots.Hide', 'recall')
 
 set('RR4', 'clip', 'MEDIA/ramrec/Common/Sign Extended.rr')
 

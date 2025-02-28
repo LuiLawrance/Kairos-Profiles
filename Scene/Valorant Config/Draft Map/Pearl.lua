@@ -1,6 +1,9 @@
 -- Functionality Variables
 
 local macro = 'Pearl'
+local sceneMap = 'SCENES.Player POVs.Casters.Layers.Valorant.Map '
+local stillMap = 'MEDIA/stills/Valorant/Draft Maps/Pearl.rr'
+
 local gfxMapList = 'GFXSCENES.Valorant.Maps'
 local gfxMatchSelect = 'GFXSCENES.Valorant.Match Select'
 local gfxSelectedMap = 'GFXSCENES.Valorant.Map ' .. get(gfxMatchSelect, 'value')
@@ -42,7 +45,9 @@ end
 
 setNumber()
 setColorMap()
+
 set(gfxSelectedMap, 'value', mapNumber)
+set(sceneMap .. get(gfxMatchSelect, 'value'), 'sourceA', stillMap)
 
 -------------------------------------------------------------------------------------------
 
