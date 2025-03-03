@@ -4,7 +4,7 @@ local gfxRetracted = 'GFXSCENES.Control.Retracted'
 
 local gfxValorantUSC = 'GFXSCENES.Valorant.USC'
 local gfxValorantVisitor = 'GFXSCENES.Valorant.Visitor'
-local gfxBestOf = 'GFXSCENES.Valorant.Best of'
+local bestOf = get('GFXSCENES.Control.BO ' .. get('GFXSCENES.Control.Selected Match', 'value'), 'value')
 
 local snapshotHide = 'SCENES.Player POVs.Casters.Snapshots.Hide'
 local snapshotMenu = 'SCENES.Player POVs.Casters.Snapshots.Menu'
@@ -25,7 +25,7 @@ local snapshotBO5Map3 = 'SCENES.Player POVs.Casters.Snapshots.Val 5-3'
 local snapshotBO5Map4 = 'SCENES.Player POVs.Casters.Snapshots.Val 5-4'
 local snapshotBO5Map5 = 'SCENES.Player POVs.Casters.Snapshots.Val 5-5'
 
-local sceneTitleCard = 'THIS_SCENE.Layers.Title Card'
+local sceneTitleCard = 'SCENES.Player POVs.Casters.Layers.Title Card'
 
 local stillMatch1 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 1.rr'
 local stillMatch2 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 2.rr'
@@ -34,6 +34,8 @@ local stillMatch4 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 4.rr'
 local stillMatch5 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 5.rr'
 
 local fxTickerWhite = 'FXINPUTS.Valorant Config.Ticker White'
+
+local sceneGFX = 'GFXSCENES.Control'
 
 -------------------------------------------------------------------------------------------
 -- Arrays
@@ -45,6 +47,65 @@ local fxTickerWhite = 'FXINPUTS.Valorant Config.Ticker White'
 
 function callSnapshot(snapshot)
     call(snapshot, 'recall')
+end
+
+function muteAll()
+    for i = 1, 6 do
+        if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 1 then
+            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+        end
+
+        wait_milliseconds(10)
+    end
+end
+
+function muteAllExcept(source, preferredChannel)
+    local unmuted = 0
+
+    for i = 1, 6 do
+        if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 0 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+
+            unmuted = 1
+        else
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 1 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+        end
+
+        wait_milliseconds(10)
+    end
+
+    if unmuted == 0 then
+        local currentSource = get(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value')
+        set(macroLocationAudio .. '.' .. preferredChannel .. ') ' .. sourceNames[currentSource], 'name', preferredChannel .. ') ' .. sourceNames[source])
+        set('AUDIOMIXER.Channel ' .. preferredChannel, 'source', sourceIndex[source])
+        set(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value', source)
+        call('MACROS.Main R1 Macros.Channel ' .. preferredChannel, 'play')
+    end
+end
+
+function unmute(source, preferredChannel)
+    local unmuted = 0
+
+    for i = 1, 6 do
+        if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
+            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            unmuted = 1
+        end
+
+        wait_milliseconds(10)
+    end
+
+    if unmuted == 0 then
+        local currentSource = get(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value')
+        set(macroLocationAudio .. '.' .. preferredChannel .. ') ' .. sourceNames[currentSource], 'name', preferredChannel .. ') ' .. sourceNames[source])
+        set('AUDIOMIXER.Channel ' .. preferredChannel, 'source', sourceIndex[source])
+        set(sceneGFX .. '.Audio Source ' .. preferredChannel, 'value', source)
+        call('MACROS.Main R1 Macros.Channel ' .. preferredChannel, 'play')
+    end
 end
 
 function match()
@@ -62,7 +123,7 @@ function match()
         set(sceneTitleCard, 'sourceA', stillMatch5)
     end
 
-    if get(gfxBestOf, 'value') == 3 then
+    if bestOf == 3 then
         callSnapshot(snapshotBO3)
 
         if score == 0 then
@@ -102,7 +163,7 @@ function menu()
     callSnapshot(snapshotMap)
     wait_milliseconds(750)
 
-    if get(gfxBestOf, 'value') == 3 then
+    if bestOf == 3 then
         callSnapshot(snapshotBO3Map)
     else
         callSnapshot(snapshotBO5Map)
@@ -132,6 +193,9 @@ end
 
 -------------------------------------------------------------------------------------------
 -- Main Script
+
+unmute(27, 5)
+unmute(30, 1)
 
 match()
 score()

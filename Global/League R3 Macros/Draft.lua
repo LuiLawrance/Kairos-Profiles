@@ -11,6 +11,10 @@ local sceneGFX = 'GFXSCENES.Control'
 -------------------------------------------------------------------------------------------
 -- Arrays
 
+local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
+local sourceNames = load("return " .. sourceNamesString)()
+local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
+local sourceIndex = load("return " .. sourceIndexString)()
 local playerNamesString = get('GFXSCENES.League.Players', 'text')
 local playerNames = load("return " .. playerNamesString)()
 
@@ -60,7 +64,10 @@ function unmute(source, preferredChannel)
 
     for i = 1, 6 do
         if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
-            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 0 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+
             unmuted = 1
         end
 
@@ -187,6 +194,7 @@ wait_milliseconds(1000)
 call('SCENES.League Game.Canvas.Snapshots.Clear', 'recall')
 call('SCENES.League Game.Canvas.Transitions.BgdMix', 'transition_auto')
 call('SCENES.League Game.LED Wall.Snapshots.Clear', 'recall')
+call('SCENES.Player POVs.Casters.Snapshots.Retract', 'recall')
 
 set('AP2', 'repeat_playlist', '1')
 set('AP2', 'repeat', '0')
@@ -209,7 +217,7 @@ resetAll() -- Reset all selections
 local blue = get('GFXSCENES.League.Blue Side', 'value')
 local usc = get('GFXSCENES.League.USC', 'value')
 local visitor = get('GFXSCENES.League.Visitor', 'value')
-local match = get('GFXSCENES.League.Best of', 'value')
+local match = get('GFXSCENES.Control.BO ' .. get('GFXSCENES.Control.Selected Match', 'value'), 'value')
 
 call('SCENES.League Game.LED Wall.Snapshots.Blue Pick', 'recall')
 

@@ -60,7 +60,10 @@ function unmute(source, preferredChannel)
 
     for i = 1, 6 do
         if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
-            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 0 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+
             unmuted = 1
         end
 

@@ -7,6 +7,14 @@ local sceneGFX = 'GFXSCENES.Control'
 local intermission = 'GFXSCENES.League.Intermission'
 
 -------------------------------------------------------------------------------------------
+-- Arrays
+
+local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
+local sourceNames = load("return " .. sourceNamesString)()
+local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
+local sourceIndex = load("return " .. sourceIndexString)()
+
+-------------------------------------------------------------------------------------------
 -- Functions
 function muteAll()
     for i = 1, 6 do
@@ -51,7 +59,10 @@ function unmute(source, preferredChannel)
 
     for i = 1, 6 do
         if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
-            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 0 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+
             unmuted = 1
         end
 
@@ -74,6 +85,7 @@ set(intermission, 'value', 0)
 set('CP2', 'clip', clip)
 call('CP2', 'play')
 call('SCENES.Common.Media.Snapshots.Set BGD', 'recall')
+call('SCENES.Common.Media.Macros.Reset CDN', 'play')
 
 muteAllExcept(27, 5)
 wait_milliseconds(10)

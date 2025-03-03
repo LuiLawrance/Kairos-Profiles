@@ -4,6 +4,7 @@ local clip = 'MEDIA/clips/Common/Flag.mp4'
 
 local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
+local intermission = 'GFXSCENES.League.Intermission'
 
 -------------------------------------------------------------------------------------------
 -- Arrays
@@ -60,7 +61,10 @@ function unmute(source, preferredChannel)
 
     for i = 1, 6 do
         if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
-            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 0 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+
             unmuted = 1
         end
 
@@ -79,9 +83,11 @@ end
 -------------------------------------------------------------------------------------------
 -- Main Script
 
+set(intermission, 'value', 0)
 set('CP2', 'clip', clip)
 call('CP2', 'play')
 call('SCENES.Common.Media.Snapshots.Set BGD', 'recall')
+call('SCENES.Common.Media.Macros.Reset CDN', 'play')
 
 muteAllExcept(27, 5)
 wait_milliseconds(10)
