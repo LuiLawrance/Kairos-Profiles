@@ -1,6 +1,6 @@
 -- Functionality Variables
 
-setMedia = get('GFXSCENES.Control.Media Selection', 'value')
+setMedia = get('GFXSCENES.Control.Media Select', 'value')
 
 local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
@@ -82,6 +82,7 @@ end
 
 muteAllExcept(30, 1)
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Player POVs.Casters')
+call('SCENES.Player POVs.Casters.Snapshots.Retract', 'recall')
 wait_milliseconds(500)
 unmute(27, 1)
 

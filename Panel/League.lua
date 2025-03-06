@@ -68,7 +68,7 @@ end
 -------------------------------------------------------------------------------------------
 -- Main Script
 
-set('RR8', 'clip', 'MEDIA/ramrec/Common/Stinger.rr')
+set('RR8', 'clip', 'MEDIA/ramrec/Common/Transitions/Stinger.rr')
 call('RR8', 'begin')
 
 wait_milliseconds(t)

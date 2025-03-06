@@ -2,9 +2,11 @@
 
 local gfxRetracted = 'GFXSCENES.Control.Retracted'
 
+local gfxMatchBO = 'GFXSCENES.Control.BO '
+local gfxSelectedMatch = 'GFXSCENES.Control.Selected Match'
 local gfxValorantUSC = 'GFXSCENES.Valorant.USC'
 local gfxValorantVisitor = 'GFXSCENES.Valorant.Visitor'
-local bestOf = get('GFXSCENES.Control.BO ' .. get('GFXSCENES.Control.Selected Match', 'value'), 'value')
+local bestOf = get(gfxMatchBO .. get(gfxSelectedMatch, 'value'), 'value')
 
 local snapshotHide = 'SCENES.Player POVs.Casters.Snapshots.Hide'
 local snapshotMenu = 'SCENES.Player POVs.Casters.Snapshots.Menu'
@@ -32,7 +34,9 @@ local stillMatch2 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 2.rr'
 local stillMatch3 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 3.rr'
 local stillMatch4 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 4.rr'
 local stillMatch5 = 'MEDIA/stills/Common/Scene - Casters/Title Card/Match 5.rr'
+local stillMatchLED = 'MEDIA/stills/Valorant/Scene - LED Wall/Match/Match '
 
+local fxMatch = 'FXINPUTS.Valorant Config.LED Wall.Match'
 local fxTickerWhite = 'FXINPUTS.Valorant Config.Ticker White'
 
 local sceneGFX = 'GFXSCENES.Control'
@@ -40,7 +44,10 @@ local sceneGFX = 'GFXSCENES.Control'
 -------------------------------------------------------------------------------------------
 -- Arrays
 
-
+local sourceNamesString = get('GFXSCENES.Control.sourceNames', 'text')
+local sourceNames = load("return " .. sourceNamesString)()
+local sourceIndexString = get('GFXSCENES.Control.sourceIndex', 'text')
+local sourceIndex = load("return " .. sourceIndexString)()
 
 -------------------------------------------------------------------------------------------
 -- Functions
@@ -92,7 +99,10 @@ function unmute(source, preferredChannel)
 
     for i = 1, 6 do
         if get(sceneGFX .. '.Audio Source ' .. i, 'value') == source then
-            call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            if get(sceneGFX .. '.Audio Control ' .. i, 'value') == 0 then
+                call('MACROS.Main R1 Macros.Channel ' .. i, 'play')
+            end
+
             unmuted = 1
         end
 
@@ -110,16 +120,22 @@ end
 
 function match()
     local score = get(gfxValorantUSC, 'value') + get(gfxValorantVisitor, 'value')
+    local LED = score + 1
 
     if score == 0 then
+        set(fxMatch, 'source', stillMatchLED .. LED .. '.rr')
         set(sceneTitleCard, 'sourceA', stillMatch1)
     elseif score == 1 then
+        set(fxMatch, 'source', stillMatchLED .. LED .. '.rr')
         set(sceneTitleCard, 'sourceA', stillMatch2)
     elseif score == 2 then
+        set(fxMatch, 'source', stillMatchLED .. LED .. '.rr')
         set(sceneTitleCard, 'sourceA', stillMatch3)
     elseif score == 3 then
+        set(fxMatch, 'source', stillMatchLED .. LED .. '.rr')
         set(sceneTitleCard, 'sourceA', stillMatch4)
     elseif score == 4 then
+        set(fxMatch, 'source', stillMatchLED .. LED .. '.rr')
         set(sceneTitleCard, 'sourceA', stillMatch5)
     end
 

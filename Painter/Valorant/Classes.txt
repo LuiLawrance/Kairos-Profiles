@@ -1,0 +1,1 @@
+{"Controller", "Initiator", "Controller", "Sentinel", "Controller", "Sentinel", "Sentinel", "Initiator", "Initiator", "Controller", "Duelist", "Duelist", "Initiator", "Sentinel", "Duelist", "Controller", "Duelist", "Duelist", "Duelist", "Sentinel", "Initiator", "Initiator", "Initiator", "Controller", "Sentinel", "Duelist", "Duelist"}

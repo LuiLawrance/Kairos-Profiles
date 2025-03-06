@@ -12,6 +12,8 @@ local macroStinger = 'MACROS.Valorant Misc R1 Macros.Stinger'
 local sceneGFX = 'GFXSCENES.Control'
 local sceneGame = 'SCENES.Normal.Game 1'
 
+local macroLocationAudio = 'MACROS.Main R2 Macros'
+
 -------------------------------------------------------------------------------------------
 -- Arrays
 
