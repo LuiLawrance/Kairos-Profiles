@@ -1,6 +1,6 @@
 -- Functionality Variables
 
-local setMedia = get('GFXSCENES.Control.Media Select', 'value')
+local setMedia = get('GFXSCENES.Control.Selected Match', 'value') 
 
 local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
@@ -82,15 +82,19 @@ end
 
 muteAllExcept(30, 1)
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Player POVs.Casters')
-call('SCENES.Player POVs.Casters.Snapshots.Retract', 'recall')
+call('SCENES.Player POVs.Casters.Macros.Retract', 'play')
 wait_milliseconds(500)
 unmute(27, 5)
 
 call('GFXSCENES.League.USC', 'increase')
 call('MACROS.League Misc R1 Macros.Victory', 'play')
 
-call('SCENES.Common.Media.Macros.Add T1 ' .. setMedia, 'play')
-call('SCENES.Common.Media.Macros.Ongoing ' .. setMedia, 'play')
+call('SCENES.Common.Media.Macros.Select ' .. setMedia, 'play')
+
+wait_milliseconds(500)
+
+call('SCENES.Common.Media.Macros.Score 1', 'play')
+call('SCENES.Common.Media.Macros.Ongoing', 'play')
 
 -------------------------------------------------------------------------------------------
 

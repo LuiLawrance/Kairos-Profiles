@@ -111,6 +111,9 @@ if get('GFXSCENES.Control.PlayerMV', 'value') >= 1 then -- Deactivate the any MV
     call('MACROS.Valorant R4 Macros.MV', 'play')
 end
 
+call('GFXSCENES.Valorant.USC', 'reset')     --| Reset the score
+call('GFXSCENES.Valorant.Visitor', 'reset') --|
+
 set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.Valorant Game.Draft')
 
 --faceCams()

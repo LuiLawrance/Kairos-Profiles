@@ -23,8 +23,6 @@ function setColorMap()
         else
             set('THIS_SCENE.Macros.' .. mapList[i], 'color', 'rgb(0,255,0)')
         end
-
-        wait_milliseconds(20)
     end
 end
 
@@ -35,8 +33,6 @@ function setColorMatch()
         else
             set('THIS_SCENE.Macros.Match ' .. i, 'color', 'rgb(255,255,255)')
         end
-
-        wait_milliseconds(20)
     end
 end
 

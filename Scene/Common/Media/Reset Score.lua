@@ -1,6 +1,18 @@
+-- Macro Definition:
+
+
+
+-------------------------------------------------------------------------------------------
 -- Functionality Variables
 
+local gfxMediaSelect = 'GFXSCENES.Control.Media Select'
 
+local selectedMatch = get(gfxMediaSelect, 'value')
+
+local gfxMatchBO = 'GFXSCENES.Control.BO ' .. selectedMatch
+local gfxMatchScore = 'GFXSCENES.Control.Match ' .. selectedMatch .. ' Match'
+local gfxTeam1 = 'GFXSCENES.Control.T1 ' .. selectedMatch
+local gfxTeam2 = 'GFXSCENES.Control.T2 ' .. selectedMatch
 
 -------------------------------------------------------------------------------------------
 -- Arrays
@@ -15,12 +27,14 @@
 -------------------------------------------------------------------------------------------
 -- Main Script
 
-call('GFXSCENES.Control.T1 1', 'reset')
-call('GFXSCENES.Control.T2 1', 'reset')
-call('GFXSCENES.Control.T1 2', 'reset')
-call('GFXSCENES.Control.T2 2', 'reset')
-call('GFXSCENES.Control.T1 3', 'reset')
-call('GFXSCENES.Control.T2 3', 'reset')
+call(gfxTeam1, 'reset')
+call(gfxTeam2, 'reset')
+
+if get(gfxMatchBO, 'value') == 3 then
+    set(gfxMatchScore, 'text', 'BO3')
+else
+    set(gfxMatchScore, 'text', 'BO5')
+end
 
 -------------------------------------------------------------------------------------------
 

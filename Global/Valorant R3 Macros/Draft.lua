@@ -31,6 +31,7 @@ local layerDraftTeamLeft = 'SCENES.Valorant Game.Draft.Layers.Teams.Logo Left'
 local layerDraftTeamLeftCrawl = 'SCENES.Valorant Game.Draft.Layers.Teams.Crawl Left'
 local layerDraftTeamRight = 'SCENES.Valorant Game.Draft.Layers.Teams.Logo Right'
 local layerDraftTeamRightCrawl = 'SCENES.Valorant Game.Draft.Layers.Teams.Crawl Right'
+local layerGameTeam = 'SCENES.Valorant Game.Game.Layers.Game.'
 local layerGameTeamLeft = 'SCENES.Valorant Game.Game.Layers.Game.Left'
 local layerGameTeamRight = 'SCENES.Valorant Game.Game.Layers.Game.Right'
 local layerMainBGD = 'SCENES.Main.Layers.Background'
@@ -229,37 +230,45 @@ function setScore()
 
     if ATK == 1 then
         if usc >= 1 then
-            set(layerDraftTeam .. 'L1', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'L1', 'sourceA', fxTickerWhite)
-        end
-        if usc == 2 then
-            set(layerDraftTeam .. 'L2', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'L2', 'sourceA', fxTickerWhite)
-        end
-        if visitor >= 1 then
+            set(layerGameTeam .. 'R1', 'sourceA', fxTickerWhite)
             set(layerDraftTeam .. 'R1', 'sourceA', fxTickerWhite)
             set(layerLEDTeam .. 'R1', 'sourceA', fxTickerWhite)
         end
-        if visitor == 2 then
+        if usc == 2 then
+            set(layerGameTeam .. 'R2', 'sourceA', fxTickerWhite)
             set(layerDraftTeam .. 'R2', 'sourceA', fxTickerWhite)
             set(layerLEDTeam .. 'R2', 'sourceA', fxTickerWhite)
+        end
+        if visitor >= 1 then
+            set(layerGameTeam .. 'L1', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'L1', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'L1', 'sourceA', fxTickerWhite)
+        end
+        if visitor == 2 then
+            set(layerGameTeam .. 'L2', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'L2', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'L2', 'sourceA', fxTickerWhite)
         end
     else
         if usc > 0 then
-            set(layerDraftTeam .. 'R1', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'R1', 'sourceA', fxTickerWhite)
-        end
-        if usc > 1 then
-            set(layerDraftTeam .. 'R2', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'R2', 'sourceA', fxTickerWhite)
-        end
-        if visitor > 0 then
+            set(layerGameTeam .. 'L1', 'sourceA', fxTickerWhite)
             set(layerDraftTeam .. 'L1', 'sourceA', fxTickerWhite)
             set(layerLEDTeam .. 'L1', 'sourceA', fxTickerWhite)
         end
-        if visitor > 1 then
+        if usc > 1 then
+            set(layerGameTeam .. 'L2', 'sourceA', fxTickerWhite)
             set(layerDraftTeam .. 'L2', 'sourceA', fxTickerWhite)
             set(layerLEDTeam .. 'L2', 'sourceA', fxTickerWhite)
+        end
+        if visitor > 0 then
+            set(layerGameTeam .. 'R1', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'R1', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'R1', 'sourceA', fxTickerWhite)
+        end
+        if visitor > 1 then
+            set(layerGameTeam .. 'R2', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'R2', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'R2', 'sourceA', fxTickerWhite)
         end
     end
 end
@@ -273,8 +282,8 @@ function setSide()
         set(layerDraftTeamRightCrawl, 'sourceA', 'RR6')
         set(layerDraftTeamLeft, 'sourceA', fxHome)
         set(layerDraftTeamRight, 'sourceA', fxVisitor)
-        set(layerGameTeamLeft, 'sourceA', fxHome)
-        set(layerGameTeamRight, 'sourceA', fxVisitor)
+        set(layerGameTeamLeft, 'sourceA', fxVisitor)
+        set(layerGameTeamRight, 'sourceA', fxHome)
         set(layerLEDHome, 'sourceA', fxHome)
         set(layerLEDVisitor, 'sourceA', fxVisitor)
     else
@@ -283,8 +292,8 @@ function setSide()
         set(layerDraftTeamRightCrawl, 'sourceA', 'RR5')
         set(layerDraftTeamLeft, 'sourceA', fxVisitor)
         set(layerDraftTeamRight, 'sourceA', fxHome)
-        set(layerGameTeamLeft, 'sourceA', fxVisitor)
-        set(layerGameTeamRight, 'sourceA', fxHome)
+        set(layerGameTeamLeft, 'sourceA', fxHome)
+        set(layerGameTeamRight, 'sourceA', fxVisitor)
         set(layerLEDHome, 'sourceA', fxVisitor)
         set(layerLEDVisitor, 'sourceA', fxHome)
     end
@@ -301,7 +310,7 @@ callSnapshot(snapshotHide)
 callSnapshot(snapshotLEDHide)
 
 call(gfxTimer, 'reset')
-set(gfxTimer, 'start', '68')
+set(gfxTimer, 'start', '120')
 call(gfxTimer, 'start')
 
 setMap()
