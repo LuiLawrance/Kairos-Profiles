@@ -110,7 +110,7 @@ call(clipPlayer, 'play')
 
 wait_milliseconds(4500)
 
-unmute(29, 4)
+unmute(31, 4)
 snapshot(snapshotMediaHide)
 
 wait_milliseconds(10000)

@@ -199,7 +199,7 @@ set('RR4', 'repeat', '0')
 usc(amntDroneClips)
 
 wait_milliseconds(10)
-unmute(30, 1)
+unmute(33, 1)
 
 cameraMove()
 sign(number)

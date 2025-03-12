@@ -79,10 +79,10 @@ end
 -- Main Script
 
 mode = get('GFXSCENES.League.Replay', 'value')
-muteAllExcept(30, 1)
+muteAllExcept(33, 1)
 
 wait_milliseconds(500)
-unmute(31, 2)
+unmute(34, 2)
 
 if mode == 0 then 
     set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Game')

@@ -111,7 +111,7 @@ wait_milliseconds(2000)
 
 transition(transitionBlack)
 snapshot(snapshotMediaHide)
-muteAllExcept(29, 4)
+muteAllExcept(31, 4)
 
 wait_milliseconds(11250)
 

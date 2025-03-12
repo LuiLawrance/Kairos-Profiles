@@ -107,14 +107,14 @@ set(clipPlayer, 'playlist', '')
 set(clipPlayer, 'clip', clip)
 set(sceneMediaLayer .. '.Layers.BGD', 'sourceB', clipPlayer)
 
-unmute(29, 4)
+unmute(31, 4)
 call(clipPlayer, 'play')
 
-wait_milliseconds(5000)
+wait_milliseconds(3000)
 
 snapshot(snapshotMediaHide)
 
-wait_milliseconds(10500)
+wait_milliseconds(12500)
 
 snapshot(snapshotMediaMenuShow)
 wait_milliseconds(1000)

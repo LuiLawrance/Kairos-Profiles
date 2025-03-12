@@ -80,11 +80,11 @@ end
 -------------------------------------------------------------------------------------------
 -- Main Script
 
-muteAllExcept(30, 1)
+muteAllExcept(33, 1)
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Player POVs.Casters')
 call('SCENES.Player POVs.Casters.Macros.Retract', 'play')
 wait_milliseconds(500)
-unmute(27, 1)
+unmute(27, 5)
 
 call('GFXSCENES.League.Visitor', 'increase')
 call('MACROS.League Misc R1 Macros.Defeat', 'play')

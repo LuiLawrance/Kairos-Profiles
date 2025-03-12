@@ -110,7 +110,7 @@ end
 -- Main Script
 
 call(gfxScore, 'increase')
-muteAllExcept(30, 1)
+muteAllExcept(33, 1)
 
 set(layerMainBGD, 'sourceB', sceneCasters)
 callMacro(macroRetract)

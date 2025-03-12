@@ -106,7 +106,7 @@ set(clipPlayer, 'playlist', '')
 set(clipPlayer, 'clip', clip)
 
 wait_milliseconds(1000)
-unmute(29, 4)
+unmute(31, 4)
 snapshot(snapshotMediaHide)
 transition(transitionBlack)
 

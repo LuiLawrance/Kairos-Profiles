@@ -88,10 +88,10 @@ if mode == 1 then
     call('MACROS.League R4 Macros.Show Game', 'play')
 end
 
-muteAllExcept(30, 1)
+muteAllExcept(33, 1)
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Replay')
 wait_milliseconds(1000)
-unmute(33, 3)
+unmute(35, 3)
 
 call('MACROS.League Misc R1 Macros.Replay', 'play')
 wait_milliseconds(3500)

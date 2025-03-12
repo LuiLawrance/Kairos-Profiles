@@ -106,7 +106,7 @@ set(clipPlayer, 'clip', clip)
 set(sceneMediaLayer .. '.Layers.BGD', 'sourceB', clipPlayer)
 
 call(clipPlayer, 'play')
-muteAllExcept(29, 4)
+muteAllExcept(31, 4)
 
 wait_milliseconds(4000)
 

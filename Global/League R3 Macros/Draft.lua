@@ -5,6 +5,8 @@ local t = 3000
 local blueBan = 'MEDIA/ramrec/League of Legends/Blue Ban.rr'
 local modeMV = get('GFXSCENES.Control.PlayerMV', 'value')
 
+local macroRetract = 'SCENES.Player POVs.Casters.Macros.Retract'
+
 local macroLocationAudio = 'MACROS.Main R2 Macros'
 local sceneGFX = 'GFXSCENES.Control'
 
@@ -20,6 +22,10 @@ local playerNames = load("return " .. playerNamesString)()
 
 -------------------------------------------------------------------------------------------
 -- Functions
+
+function callMacro(macro)
+    call(macro, 'play')
+end
 
 function muteAll()
     for i = 1, 6 do
@@ -204,7 +210,7 @@ call('AP2', 'play')
 call('RR5', 'play')
 call('RR6', 'play')
 
-muteAllExcept(30, 1)
+muteAllExcept(33, 1)
 wait_milliseconds(1000)
 unmute(28, 6)
 
@@ -225,6 +231,8 @@ set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.League Game.Draft') -- Pulls up the champion select
 recallMatchSnapshot(match) -- Set snapshot based on match type
 configureTeamSides(blue, usc, visitor) -- Configure blue and red sides based on team values
+
+callMacro(macroRetract)
 
 if modeMV == 0 then 
     set('MACROS.League R3 Macros.Player', 'color', 'rgb(255,0,0)')

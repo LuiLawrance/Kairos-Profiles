@@ -1,6 +1,6 @@
 -- Functionality Variables
 
-local desiredSources = {30, 31, 32, 29, 27, 28}
+local desiredSources = {33, 34, 35, 31, 27, 28}
 --local desiredVolume = {0, 0, 0, 0, 0, 0}
 local t = 50  -- Milliseconds to wait
 local faceCam = get('GFXSCENES.Control.Face Cams', 'value')
@@ -32,23 +32,23 @@ function audioSet() -- Set's the Audio Channels to the desired Sources/Volume
         set('AUDIOMIXER.Channel ' .. i, 'source', sourceIndex[desiredSources[i]])
         --set('AUDIOMIXER.Channel ' .. i, 'volume', desiredVolume[i] / 100)
         set('MACROS.Main R2 Macros.' .. i .. ') ' .. sourceNames[sourceCurrent], 'name', i .. ') ' .. sourceNames[desiredSources[i]])
-        --set('GFXSCENES.Overwatch.Channel ' .. i, 'value', desiredVolume[i])
+        --set('GFXSCENES.Valorant.Channel ' .. i, 'value', desiredVolume[i])
         wait_milliseconds(t)
     end
 end
 
 function faceCams()
     if faceCam == 1 then
-        call('SCENES.Player POVs.Player 1.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 2.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 3.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 4.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 5.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 6.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 7.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 8.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 9.Snapshots.Overwatch', 'recall')
-        call('SCENES.Player POVs.Player 10.Snapshots.Overwatch', 'recall')
+        call('SCENES.Player POVs.Player 1.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 2.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 3.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 4.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 5.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 6.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 7.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 8.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 9.Snapshots.Valorant', 'recall')
+        call('SCENES.Player POVs.Player 10.Snapshots.Valorant', 'recall')
     else
         call('SCENES.Player POVs.Player 1.Snapshots.Off', 'recall')
         call('SCENES.Player POVs.Player 2.Snapshots.Off', 'recall')
@@ -63,17 +63,17 @@ function faceCams()
     end
 end
 
-function overwatchMV()
-    set('IP-AUX2', 'source', 'SCENES.Overwatch Game.Canvas')
-    set('IP-AUX3', 'source', 'SCENES.Overwatch Game.Canvas')
-    set('IP-AUX4', 'source', 'SCENES.Overwatch Game.Canvas')
-    set('IP-AUX5', 'source', 'SCENES.Overwatch Game.Canvas')
-    set('IP-AUX6', 'source', 'SCENES.Overwatch Game.Canvas')
+function valorantMV()
+    set('IP-AUX2', 'source', 'SCENES.Valorant Game.Canvas')
+    set('IP-AUX3', 'source', 'SCENES.Valorant Game.Canvas')
+    set('IP-AUX4', 'source', 'SCENES.Valorant Game.Canvas')
+    set('IP-AUX5', 'source', 'SCENES.Valorant Game.Canvas')
+    set('IP-AUX6', 'source', 'SCENES.Valorant Game.Canvas')
 
-    set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', 'SCENES.Overwatch Game.LED Wall')
-    set('SCENES.Normal.Caster Desk.Layers.Background', 'sourceA', 'SCENES.Overwatch Game.Caster Desk')
+    set('SCENES.Normal.LED Wall.Layers.Background', 'sourceA', 'SCENES.Valorant Game.LED Wall')
+    set('SCENES.Normal.Caster Desk.Layers.Background', 'sourceA', 'SCENES.Valorant Game.Caster Desk')
 
-    set('MV2.Inputs.11', 'source', 'SCENES.Overwatch Game.Canvas')
+    set('MV2.Inputs.11', 'source', 'SCENES.Valorant Game.Canvas')
     wait_milliseconds(t)
     call('MVPRESETS.Game 2', 'store', '5061')
 end
@@ -85,42 +85,45 @@ set('RR8', 'clip', 'MEDIA/ramrec/Common/Transitions/Stinger.rr')
 call('RR8', 'begin')
 
 wait_milliseconds(t)
-set('GFXSCENES.Control.Game', 'value', 2)                          -- Set's it to 2 indicating Overwatch
-set('SCENES.Main.Layers.Misc R1', 'sourceOptions', '1000077968,')
-set('SCENES.Main.Layers.Misc R2', 'sourceOptions', '1000077969,')
-set('SCENES.Main.Layers.Row 1', 'sourceOptions', '1000348298,')
-set('SCENES.Main.Layers.Row 2', 'sourceOptions', '1000348299,')
-set('SCENES.Main.Layers.Row 3', 'sourceOptions', '1000077971,')
-set('SCENES.Main.Layers.Row 4', 'sourceOptions', '1000077973,')
-set('SCENES.Main.Layers.Background', 'sourceOptions', '1000065377,')
+set('GFXSCENES.Control.Game', 'value', 3)                          -- Set's it to 3 indicating Valorant
+set('SCENES.Main.Layers.Misc R1', 'sourceOptions', '1000077974,')
+set('SCENES.Main.Layers.Misc R2', 'sourceOptions', '1000077975,')
+set('SCENES.Main.Layers.Row 1', 'sourceOptions', '1000348300,')
+set('SCENES.Main.Layers.Row 2', 'sourceOptions', '1000348301,')
+set('SCENES.Main.Layers.Row 3', 'sourceOptions', '1000077976,')
+set('SCENES.Main.Layers.Row 4', 'sourceOptions', '1000077977,')
+set('SCENES.Main.Layers.Background', 'sourceOptions', '1000077770,')
 
 set('SCENES.Main.Layers.Transition', 'state', 'On') -- Enable the Main scene's "Transition" layer
 
 audioSet()
-set('GFX1', 'scene', '1000078027')
+set('GFX1', 'scene', '1000078028')
 
 call('MVPRESETS.Game 1', 'recall', '5060') --| Sets the Multi View
 call('MVPRESETS.Game 2', 'recall', '5061') --|
-set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.Overwatch Game.Game 1')
-set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'SCENES.Overwatch Game.Game 2')
+set('SCENES.Normal.Game 1.Layers.Game', 'sourceA', 'SCENES.Valorant Game.Game')
+set('SCENES.Normal.Game 2.Layers.Game', 'sourceA', 'BLACK')
 set('SCENES.Normal.Game 3.Layers.Game', 'sourceA', 'BLACK')
 
-overwatchMV()
+valorantMV()
 
 if get('GFXSCENES.Control.PlayerMV', 'value') >= 1 then -- Deactivate the any MV togglers if they are on
-    call('MACROS.Overwatch R4 Macros.MV', 'play')
+    call('MACROS.Valorant R4 Macros.MV', 'play')
 end
 
-set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', '1000065348')
+call('GFXSCENES.Valorant.USC', 'reset')     --| Reset the score
+call('GFXSCENES.Valorant.Visitor', 'reset') --|
+
+set('SCENES.Normal Config.Multipurpose.Layers.Multipurpose', 'sourceA', 'SCENES.Valorant Game.Draft')
 
 --faceCams()
 
 set('CP2', 'clip', 'MEDIA/clips/Common/Flag.mp4')
 call('CP2', 'play')
 
-set('AP1', 'playlist', '1000278142,1000278143,1000278144,1000278145,1000278146,1000278147,1000278148,1000278149,1000278150,1000278151,1000278152,1000278153,1000278154,1000278155,1000278156,1000278157,1000278158,1000278159,1000278160,1000278161,1000278162,1000278163,1000278164,1000278165,1000278166,1000278167,1000278168,1000278169,1000278170,1000278171,1000278172,1000278173,1000278174,1000278175,1000278176,1000278177,1000278178,1000278179,1000278180,1000278181,1000278182,1000278183,1000278184,1000278185,1000278186,1000278187,1000278188,1000278189,')
-set('AP1', 'playlist_idx', '27')
-call('AP1', 'load_clip', '1000278168')
+set('AP1', 'playlist', '1000333579,1000333580,1000333581,1000333582,1000333583,1000333584,1000333585,1000333586,1000333587,1000333588,1000333589,1000333590,')
+set('AP1', 'playlist_idx', '5')
+call('AP1', 'load_clip', '1000333583')
 call('AP1', 'play')
 set('AP1', 'repeat_playlist', '1')
 

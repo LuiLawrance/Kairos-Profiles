@@ -110,7 +110,7 @@ set(sceneMediaLayer .. '.Layers.BGD', 'sourceB', clipPlayer)
 wait_milliseconds(500)
 
 snapshot(snapshotMediaHide)
-unmute(29, 4)
+unmute(31, 4)
 
 wait_milliseconds(1000)
 

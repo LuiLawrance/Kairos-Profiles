@@ -41,6 +41,7 @@ local layerLEDTeam = 'SCENES.Valorant Game.LED Wall.Layers.Teams.'
 local layerLEDVisitor = 'SCENES.Valorant Game.LED Wall.Layers.Teams.Visitor'
 
 local macroP1 = 'SCENES.Valorant Game.Draft.Macros.P1'
+local macroRetract = 'SCENES.Player POVs.Casters.Macros.Retract'
 
 local sceneDraft = 'SCENES.Valorant Game.Draft'
 
@@ -319,7 +320,7 @@ setSide()
 resetPicks()
 
 unmute(27, 5)
-unmute(30, 1)
+unmute(33, 1)
 
 wait_milliseconds(2000)
 
@@ -330,6 +331,7 @@ wait_milliseconds(1000)
 
 callSnapshot(snapshotMenuFull)
 callMacro(macroP1)
+callMacro(macroRetract)
 
 setLEDWall()
 

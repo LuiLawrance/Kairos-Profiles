@@ -1,6 +1,6 @@
 -- Functionality Variables
 
-local desiredSources = {30, 31, 32, 29, 27, 28}
+local desiredSources = {33, 34, 35, 31, 27, 28}
 --local desiredVolume = {0, -10, -10, 0, -15, -18}
 local t = 50  -- Milliseconds to wait
 

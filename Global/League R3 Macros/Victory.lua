@@ -80,7 +80,7 @@ end
 -------------------------------------------------------------------------------------------
 -- Main Script
 
-muteAllExcept(30, 1)
+muteAllExcept(33, 1)
 set('SCENES.Main.Layers.Background', 'sourceB', 'SCENES.Player POVs.Casters')
 call('SCENES.Player POVs.Casters.Macros.Retract', 'play')
 wait_milliseconds(500)

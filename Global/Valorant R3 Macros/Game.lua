@@ -99,11 +99,11 @@ end
 -- Main Script
 
 set(layerMainBGD, 'sourceB', sceneGame)
-muteAllExcept(30, 1)
+muteAllExcept(33, 1)
 
 wait_milliseconds(1000)
 
-unmute(31, 2)
+unmute(34, 2)
 callMacro(macroStinger)
 
 -------------------------------------------------------------------------------------------
