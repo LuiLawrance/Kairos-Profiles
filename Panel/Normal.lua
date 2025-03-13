@@ -118,6 +118,8 @@ set('AP2', 'clip', '0')
 set('AP1', 'playlist', '')
 set('AP2', 'playlist', '')
 
+call('GFXSCENES.Control.Transition', 'reset')
+
 -------------------------------------------------------------------------------------------
 
 -- This was coded by Lawrance Zhenyu Lui
