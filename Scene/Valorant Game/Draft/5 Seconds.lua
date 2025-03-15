@@ -1,6 +1,6 @@
 -- Macro Definition:
 
-
+local macro = 5
 
 -------------------------------------------------------------------------------------------
 -- Functionality Variables
@@ -31,7 +31,7 @@ end
 -- Main Script
 
 call(gfxTimer, 'reset')
-set(gfxTimer, 'start', '5')
+set(gfxTimer, 'start', macro)
 call(gfxTimer, 'start')
 
 -------------------------------------------------------------------------------------------

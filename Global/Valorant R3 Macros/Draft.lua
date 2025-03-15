@@ -45,6 +45,7 @@ local macroRetract = 'SCENES.Player POVs.Casters.Macros.Retract'
 
 local sceneDraft = 'SCENES.Valorant Game.Draft'
 
+local snapshotCasterHide = 'SCENES.Player POVs.Casters.Snapshots.Hide'
 local snapshotLEDDraft = 'SCENES.Valorant Game.LED Wall.Snapshots.Draft'
 local snapshotLEDHide = 'SCENES.Valorant Game.LED Wall.Snapshots.Media'
 local snapshotLEDTrim = 'SCENES.Valorant Game.LED Wall.Snapshots.Trim Draft'
@@ -232,44 +233,44 @@ function setScore()
     if ATK == 1 then
         if usc >= 1 then
             set(layerGameTeam .. 'R1', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'L1', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'L1', 'sourceA', fxTickerWhite)
+        end
+        if usc == 2 then
+            set(layerGameTeam .. 'R2', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'L2', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'L2', 'sourceA', fxTickerWhite)
+        end
+        if visitor >= 1 then
+            set(layerGameTeam .. 'L1', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'R1', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'R1', 'sourceA', fxTickerWhite)
+        end
+        if visitor == 2 then
+            set(layerGameTeam .. 'L2', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'R2', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'R2', 'sourceA', fxTickerWhite)
+        end
+    else
+        if usc >= 1 then
+            set(layerGameTeam .. 'L1', 'sourceA', fxTickerWhite)
             set(layerDraftTeam .. 'R1', 'sourceA', fxTickerWhite)
             set(layerLEDTeam .. 'R1', 'sourceA', fxTickerWhite)
         end
         if usc == 2 then
-            set(layerGameTeam .. 'R2', 'sourceA', fxTickerWhite)
+            set(layerGameTeam .. 'L2', 'sourceA', fxTickerWhite)
             set(layerDraftTeam .. 'R2', 'sourceA', fxTickerWhite)
             set(layerLEDTeam .. 'R2', 'sourceA', fxTickerWhite)
         end
         if visitor >= 1 then
-            set(layerGameTeam .. 'L1', 'sourceA', fxTickerWhite)
+            set(layerGameTeam .. 'R1', 'sourceA', fxTickerWhite)
             set(layerDraftTeam .. 'L1', 'sourceA', fxTickerWhite)
             set(layerLEDTeam .. 'L1', 'sourceA', fxTickerWhite)
         end
         if visitor == 2 then
-            set(layerGameTeam .. 'L2', 'sourceA', fxTickerWhite)
-            set(layerDraftTeam .. 'L2', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'L2', 'sourceA', fxTickerWhite)
-        end
-    else
-        if usc > 0 then
-            set(layerGameTeam .. 'L1', 'sourceA', fxTickerWhite)
-            set(layerDraftTeam .. 'L1', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'L1', 'sourceA', fxTickerWhite)
-        end
-        if usc > 1 then
-            set(layerGameTeam .. 'L2', 'sourceA', fxTickerWhite)
-            set(layerDraftTeam .. 'L2', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'L2', 'sourceA', fxTickerWhite)
-        end
-        if visitor > 0 then
-            set(layerGameTeam .. 'R1', 'sourceA', fxTickerWhite)
-            set(layerDraftTeam .. 'R1', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'R1', 'sourceA', fxTickerWhite)
-        end
-        if visitor > 1 then
             set(layerGameTeam .. 'R2', 'sourceA', fxTickerWhite)
-            set(layerDraftTeam .. 'R2', 'sourceA', fxTickerWhite)
-            set(layerLEDTeam .. 'R2', 'sourceA', fxTickerWhite)
+            set(layerDraftTeam .. 'L2', 'sourceA', fxTickerWhite)
+            set(layerLEDTeam .. 'L2', 'sourceA', fxTickerWhite)
         end
     end
 end
@@ -326,6 +327,7 @@ wait_milliseconds(2000)
 
 callTransition(transitionBGD)
 callSnapshot(snapshotMenu)
+callSnapshot(snapshotCasterHide)
 
 wait_milliseconds(1000)
 

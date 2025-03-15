@@ -4,6 +4,7 @@ logos = {
     'Brigham Young University',
     'Bronco Esports',
     'California Polytechnic State University San Luis Obispo',
+    'California State University Long Beach',
     'Michigan State University',
     'Nebraska University',
     'Northwestern University',
