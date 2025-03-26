@@ -4,7 +4,6 @@ local gfxRetracted = 'GFXSCENES.Control.Retracted'
 
 local snapshotHide = 'THIS_SCENE.Snapshots.Hide'
 local snapshotMenu = 'THIS_SCENE.Snapshots.Menu'
-local snapshotMatchup = 'THIS_SCENE.Snapshots.Matchup'
 local snapshotPoster = 'THIS_SCENE.Snapshots.Poster'
 
 -------------------------------------------------------------------------------------------

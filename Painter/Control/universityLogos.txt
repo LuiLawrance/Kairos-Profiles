@@ -16,6 +16,7 @@ logos = {
     'Syracuse University',
     'University of British Columbia',
     'University of Calgary',
+    'University of California Berkeley',
     'University of California Santa Barbara',
     'University of California Santa Cruz',
     'University of Kansas',
